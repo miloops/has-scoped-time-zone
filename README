@@ -18,4 +18,6 @@ Will create the methods created_at_tz and updated_at, each one returning the dat
 
 Creates a new *_tz method for every datetime column in the Owner table scoped to its time_zone attribute value.
 
+Feedback? Bugs? Drop me a line: miloops at gmail dot com.
+
 Copyright (c) 2008 Emilio Tagua, released under the MIT license
