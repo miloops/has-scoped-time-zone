@@ -1,0 +1,21 @@
+HasScopedTimeZone
+=================
+
+This is a (very) simple plugin to simplify the usage of time zones in Rails applications.
+
+Example
+=======
+
+  class Product < ActiveRecord::Base
+    has_scoped_time_zone :created_at, :updated_at, lambda { |product| product.owner.time_zone }
+  end
+
+Will create the methods created_at_tz and updated_at, each one returning the date and time in the product's owner time zone.
+
+  class Owner < ActiveRecord::Base
+    has_scoped_time_zone lambda { |owner| owner.time_zone }
+  end
+
+Creates a new *_tz method for every datetime column in the Owner table scoped to its time_zone attribute value.
+
+Copyright (c) 2008 Emilio Tagua, released under the MIT license
